@@ -58,4 +58,5 @@ data:
         <p><em>Faithfully yours, nginx.</em></p>
         </body>
         </html>
-    index.html: {{ $.Values.index_html }}
+    index.html: |
+{{ $.Values.index_html | indent 8 }}
