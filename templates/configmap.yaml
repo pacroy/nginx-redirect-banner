@@ -11,10 +11,15 @@ data:
             listen       80;
             listen  [::]:80;
             server_name  localhost;
+            
+            location / {
+                try_files   $uri $uri/ @missing;
+                root        /usr/share/nginx/html;
+                index       index.html index.htm;
+            }
 
-            location ~ .* {
-                root   /usr/share/nginx/html;
-                index  index.html index.htm;
+            location @missing {
+                rewrite ^ $scheme://$host/index.html;
             }
 
             #error_page  404              /404.html;
