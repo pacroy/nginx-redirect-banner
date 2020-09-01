@@ -18,7 +18,6 @@ spec:
       containers:
       - image: nginx:1.18
         name: nginx
-        command: ['nginx', '-c', '/etc/nginx/conf.d/nginx.conf', '-g', 'daemon off;']
         ports:
         - containerPort: 80
           protocol: TCP
@@ -27,8 +26,8 @@ spec:
             cpu: 500m
             memory: 512Mi
           requests:
-            cpu: 250m
-            memory: 256Mi
+            cpu: 100m
+            memory: 128Mi
 ---
 apiVersion: v1
 kind: Service
