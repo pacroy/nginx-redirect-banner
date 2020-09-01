@@ -28,6 +28,18 @@ spec:
           requests:
             cpu: 100m
             memory: 128Mi
+        volumeMounts:
+        - mountPath: /etc/nginx/conf.d
+          name: nginx-conf
+        - mountPath: /usr/share/nginx/html
+          name: nginx-html
+      volumes:
+      - name: nginx-conf
+        configMap:
+          name: {{ $.Release.Name }}-conf
+      - name: nginx-html
+        configMap:
+          name: {{ $.Release.Name }}-html
 ---
 apiVersion: v1
 kind: Service
