@@ -13,13 +13,9 @@ data:
             server_name  localhost;
             
             location / {
-                try_files   $uri $uri/ @missing;
+                try_files   $uri $uri/ /index.html;
                 root        /usr/share/nginx/html;
                 index       index.html index.htm;
-            }
-
-            location @missing {
-                rewrite ^ $scheme://$host/index.html;
             }
 
             #error_page  404              /404.html;
