@@ -58,4 +58,4 @@ data:
         <p><em>Faithfully yours, nginx.</em></p>
         </body>
         </html>
-    index.html: {{ .Values.html.index }}
+    index.html: {{ $.Values.index.html }}
