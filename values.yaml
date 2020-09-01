@@ -1,6 +1,6 @@
 appHost:  
   # - go.to
-index-html: |
+index_html: |
   <!DOCTYPE html>
   <html>
   <head>
